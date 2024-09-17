@@ -13,7 +13,6 @@ resource "aws_api_gateway_rest_api" "api_gateway" {
   name        = format(lower("aws-${var.environment}-${var.application_name}-%s"), each.value["suffix"])
   description = format("%s- managed by Terraform", each.value["description"])
   body        = each.value["open_api_definition"]
-  tags        = each.value["tags"]
 
   lifecycle {
     create_before_destroy = true

@@ -24,7 +24,6 @@ REQUIRED
 - suffix                : Suffix to use when creating the RESTAPI Gateway
 - open_api_file_path    : Path to OpenAPI definition file
 - description           : A human-friendly description of the API
-- tags                  : A dictionary of tags, required to tag Stage to ensure its protected by WAF.
 
 
 OPTIONAL
@@ -43,7 +42,6 @@ EOF
     object({
       suffix             = string,
       description        = string,
-      tags               = map(string),
       open_api_file_path = string,
       template_input     = optional(map(string), {}),
       quota_limit        = optional(number, 10),
